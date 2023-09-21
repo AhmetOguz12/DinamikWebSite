@@ -1,0 +1,32 @@
+﻿@using DinamikWebSite.Models.Entity
+@model List<Musteri>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<table class="table table-hover ">
+    <thead>
+        <tr>
+            <th>Müşteri Id</th>
+            <th>Müşteri Ad</th>
+            <th>Müşteri Soyad</th>
+            <th>Sil</th>
+            <td>Güncelle</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var mus in Model)
+        {
+            <tr>
+                <td>@mus.Id</td>
+                <td>@mus.MusteriAd</td>
+                <td>@mus.MusteriSoyad</td>
+                <td>@Html.ActionLink("Sil" , "Sıl", new {id=mus.Id}, new {@class = "btn btn-danger", onclick="return confirm('Silmek İstediğinize Emin misiniz?')"})</td>
+                <td><a href="/Musteri/MusteriGetir/@mus.Id" class="btn btn-success">Güncelle</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/Musteri/MusteriEkle/" class="btn btn-primary">Müşteri Ekle</a>

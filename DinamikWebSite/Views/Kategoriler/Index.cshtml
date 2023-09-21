@@ -1,0 +1,31 @@
+﻿@using DinamikWebSite.Models.Entity
+@model List<Kategori>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Kategori ID</th>
+            <th>Kategori AD</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ktgr in Model)
+        {
+            <tr>
+                <td>@ktgr.Id</td>
+                <td>@ktgr.KategoriAd</td>
+                <td>@Html.ActionLink("Sil",  "Sıl" , new{ id=ktgr.Id}, new { @class = "btn btn-danger", onclick = "return confirm('Silmek İstediğine Emin misiniz?')" })</td>
+                <td><a href="/Kategoriler/KategoriGetir/@ktgr.Id" class="btn btn-success">Güncelle</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<td> <a href="/Kategoriler/Ekle/" class="btn btn-primary">Kategori Ekle</a></td>

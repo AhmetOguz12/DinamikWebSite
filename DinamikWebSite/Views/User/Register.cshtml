@@ -1,0 +1,33 @@
+﻿@model DinamikWebSite.Models.Entity.Kayıt
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Register</title>
+    <link rel="stylesheet" href="~/Dinamik-Web-Sitesi/register.css" />
+</head>
+<body>
+
+    @using (Html.BeginForm("Register", "User", FormMethod.Post))
+    {
+
+        <div class="login-wrapper">
+            <p>Lütfen Kayıt Olun</p>
+            <label>Kullanıcı Adı</label>
+            <input type="text" name="KullanıcıAdı" required />
+            <br />
+            <label>Şifre</label>
+            <input type="password" name="Parola" required placeholder="****" />
+            <br />
+            <div class="button">
+                <button>Kayıt Ol</button>
+            </div>
+        </div>
+    }
+</body>
+</html>

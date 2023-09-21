@@ -1,0 +1,41 @@
+﻿ @model DinamikWebSite.Models.Entity.Kayıt
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/Dinamik-Web-Sitesi/login.css" />
+</head>
+<body>
+
+
+    @using (Html.BeginForm("Login", "User", FormMethod.Post))
+    {
+        <div class="login-wrapper">
+            <p class="header">Lütfen Giriş Yapınız</p>
+            <label>Kullanıcı Adı</label>
+            <input type="text" name="KullanıcıAdı" autofocus required />
+            <br />
+            <label>Şifre</label>
+            <input type="password" name="Parola" required placeholder="****" />
+            <br />
+            <div class="button">
+                <button type="submit" value="Index">Giriş Yap</button>
+            </div>
+            <p class="register">
+                Hesabınız yok mu?<a href="register.html">Kayıt Olun</a>
+            </p>
+            <br />
+            @Html.ViewBag.hata
+        </div>
+    }
+
+
+</body>
+</html>

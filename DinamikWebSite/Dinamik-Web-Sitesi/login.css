@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&family=Roboto:ital,wght@0,300;1,300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: rgb(160, 193, 187);
+  font-family: "Open Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+
+
+.login-wrapper {
+    margin-top: 120px;
+    margin-left: 550px;
+    margin-right: 450px;
+    margin-bottom: 180px;
+    padding: 20px;
+    border-radius: 20px;
+    padding-bottom: 40px;
+    padding-top: 30px;
+    box-shadow: rgba(0, 0, 0, 0.6) 0px 3px 20px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.login-wrapper .header {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 22px;
+}
+
+.login-wrapper label {
+  display: flex;
+  margin-top: 15px;
+  font-size: 18px;
+}
+
+.login-wrapper input {
+  font-size: 18px;
+  padding: 5px;
+  background-color: rgb(160, 193, 187);
+  outline: none;
+  border: none;
+  border-bottom: 1px solid wheat;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.login-wrapper .button {
+  text-align: center;
+}
+
+.login-wrapper button {
+  border-radius: 20px;
+  font-size: 18px;
+  margin-top: 40px;
+  padding: 10px;
+  width: 170px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.6) 0px 3px 20px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.5s;
+}
+
+.login-wrapper button:hover {
+  width: 200px;
+}
+
+.login-wrapper .register {
+  text-align: right;
+  margin-top: 20px;
+}
+
+.login-wrapper .register a {
+  text-decoration: none;
+  color: white;
+}

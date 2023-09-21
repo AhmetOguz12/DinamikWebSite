@@ -1,0 +1,22 @@
+﻿@model DinamikWebSite.Models.Entity.Musteri
+@{
+    ViewBag.Title = "MusteriGetir";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@using (Html.BeginForm("Guncelle","Musteri", FormMethod.Post))
+            {
+                <div style="margin-left:-550px; margin-top:-90px">
+                    <label>Müşteri Id</label>
+                    @Html.TextBoxFor(m=>m.Id, new {@class="form-control"})
+                    <br />
+                    <label>Müşteri Ad</label>
+                    @Html.TextBoxFor(m=>m.MusteriAd, new {@class="form-control"})
+                    <br />
+                    <label>Müşteri Soyad</label>
+                    @Html.TextBoxFor(m=>m.MusteriSoyad, new {@class="form-control"})
+                    <br />
+                    <button class="btn btn-warning">Güncelle</button>
+                </div>
+            }
+

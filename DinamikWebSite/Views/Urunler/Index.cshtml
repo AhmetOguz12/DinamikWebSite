@@ -1,0 +1,38 @@
+﻿@using DinamikWebSite.Models.Entity
+@model List<Urunler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Ürünn ID</th>
+            <th>Ürün AD</th>
+            <th>KATEGORİ</th>
+            <th>MARKA</th>
+            <th>FİYAT</th>
+            <th>STOK</th>
+            <th>Güncelle</th>
+            <th>Sil</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var urn in Model)
+        {
+            <tr>
+                <td>@urn.Id</td>
+                <td>@urn.UrunAd</td>
+                <td>@urn.Kategori.KategoriAd</td>
+                <td>@urn.UrunMarka</td>
+                <td>@urn.UrunFiyat</td>
+                <td>@urn.Stok</td>
+                <td><a class="btn btn-success" href="/Urunler/UrunGetir/@urn.Id">Güncelle</a></td>
+                <td>@Html.ActionLink("Sil" , "Sıl" , new {id=urn.Id}, new {@class="btn btn-danger" , onclick="return confirm('Silmek İstediğinize Emin misiniz?')"})</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/Urunler/UrunEkle/" class="btn btn-primary">Ürün Ekle</a>

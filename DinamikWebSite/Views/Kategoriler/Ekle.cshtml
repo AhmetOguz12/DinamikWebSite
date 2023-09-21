@@ -1,0 +1,15 @@
+﻿@model DinamikWebSite.Models.Entity.Kategori
+@{
+    ViewBag.Title = "Ekle";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+
+<form  class="container" method="post">
+
+    <label>Kategori AD</label>
+    @Html.TextBoxFor(m=>m.KategoriAd, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-warning">Kategori Ekle</button>
+</form>
+

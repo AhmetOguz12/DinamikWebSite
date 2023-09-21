@@ -1,0 +1,91 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dinamik Admin Paneli</title>
+    <link rel="stylesheet" href="~/Dinamik-Web-Sitesi/style.css" />
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <header>
+        <wrapper class="wrapper">
+            <div class="header-left">
+                <p>@Session["KullanıcıAdı"]</p>
+            </div>
+            <div class="header-right">
+                <ul>
+                    <li>
+                       @Session["KullanıcıAdı"]<i class="bi bi-sort-down"></i>
+                        <ul class="dropdown">
+                            <li><a href="/Urunler/Index/">Ürünlerim</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </wrapper>
+        
+    </header>
+    <div style="position: absolute; left:150px;top:90px;" class="container">
+        @RenderBody()
+        <br />
+        <div class="modal" id="myModel13">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <p>Biz Kimiz</p>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Nulla nec tortor a odio volutpat tristique in bibendum sapien.
+                            Sed sollicitudin rutrum erat id pellentesque.
+                            Proin ac rutrum diam. Curabitur nisi mauris, consectetur non lobortis ut,
+                            consectetur et leo. Donec eu leo quis lorem posuere aliquam
+                        </p>
+                        <br />
+                        <button data-dismiss="modal" type="button" class="btn btn-danger">Kapat</button>
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div   class="sidebar">
+        <div class="row">
+            <ul>
+                <li><a href="/Kategoriler/Index/">Kategori</a></li>
+                <li><a href="/Urunler/Index/">Ürünler</a></li>
+                <li><a href="/Musteri/Index/">Müşteri</a></li>
+                <li><a style="cursor:pointer" data-toggle="modal" data-target="#myModel13">Hakkımızda</a></li>
+                <li><a href="/İletişim/Index/">İletişim</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+
+
+    <footer>
+        <div class="footer" >
+            <p>
+                Dinamik Site / 2023 Sitenin Tüm Hakları Saklıdır
+                <b>Sitenin Teması Ahmet Oğuzhan Bilgin Tarafından Geliştirilmiştir</b>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
